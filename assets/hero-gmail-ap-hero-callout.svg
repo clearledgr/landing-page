@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3354 1720" fill="none">
+  <style>
+    .note {
+      fill: #f04c00;
+      font-family: Kalam, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.08;
+    }
+    .arrow {
+      fill: none;
+      stroke: #f04c00;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+
+  <image href="./hero-gmail-ap-hero.png" width="3354" height="1720" preserveAspectRatio="xMidYMid slice" />
+
+  <g opacity="0.98">
+    <path class="arrow" d="M2410 420C2520 430 2648 452 2768 506" />
+    <path class="arrow" d="M2734 478L2768 506L2726 526" />
+    <text class="note" x="2135" y="360">
+      <tspan x="2135" dy="0">Review, approval,</tspan>
+      <tspan x="2135" dy="78">and next action stay</tspan>
+      <tspan x="2135" dy="78">on the invoice.</tspan>
+    </text>
+  </g>
+
+  <g opacity="0.98">
+    <path class="arrow" d="M740 1458C930 1360 1098 1240 1278 1020" />
+    <path class="arrow" d="M1240 1032L1278 1020L1268 1064" />
+    <text class="note" x="260" y="1498">
+      <tspan x="260" dy="0">Queue status stays</tspan>
+      <tspan x="260" dy="78">visible in Gmail.</tspan>
+    </text>
+  </g>
+</svg>
