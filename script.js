@@ -117,7 +117,7 @@ function showSuccess() {
 function setSubmittingState(button, submitting) {
   if (!button) return;
   button.disabled = submitting;
-  button.textContent = submitting ? "Sending..." : "Request access";
+  button.textContent = submitting ? "Sending..." : "Request early access";
 }
 
 if (form) {
@@ -155,7 +155,7 @@ if (form) {
     } catch {
       if (note) {
         note.innerHTML =
-          'Could not submit. Email <a href="mailto:support@clearledgr.com?subject=Clearledgr%20access%20request">support@clearledgr.com</a> and we will follow up.';
+          'Could not submit. Email <a href="mailto:support@clearledgr.com?subject=Clearledgr%20early%20access%20request">support@clearledgr.com</a> and we will follow up.';
       }
     } finally {
       setSubmittingState(submitButton, false);
