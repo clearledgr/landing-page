@@ -1,0 +1,5 @@
+# Local dev tool output
+.gstack/
+
+# macOS
+.DS_Store
