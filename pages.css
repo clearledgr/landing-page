@@ -1,5 +1,10 @@
 /* Companion-page styles — pricing, security, about, contact.
-   Layered on top of styles.css; reuses .shell, .button, .brand, .nav. */
+   Layered on top of styles.css; reuses .shell, .button, .brand, .nav.
+
+   Note: .about-page scoped overrides further down give the manifesto
+   its own typographic treatment (light-weight display h1, narrow
+   centered prose column, strong closing CTA). Other subpages keep the
+   default treatment. */
 
 .subpage-hero {
   padding: 64px 0 32px;
@@ -290,4 +295,123 @@
   font-size: 13px;
   color: var(--ink-soft);
   margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------- */
+/* About page — manifesto treatment                                  */
+/* Light-display h1, narrow centered column, generous vertical air,  */
+/* strong closing CTA. Inspired by getbasis.ai/about, in Clearledgr  */
+/* mint + navy palette.                                              */
+/* ---------------------------------------------------------------- */
+
+.about-page .subpage-hero {
+  padding: 120px 0 56px;
+  border-bottom: 0;
+}
+
+.about-page .subpage-hero .shell {
+  max-width: 880px;
+}
+
+.about-page .subpage-hero__title {
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--dark);
+  max-width: none;
+}
+
+.about-page .subpage-hero__sub {
+  margin-top: 24px;
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+.about-page .subpage-section {
+  padding: 0 0 24px;
+}
+
+.about-page .subpage-section + .subpage-section {
+  border-top: 0;
+}
+
+.about-page .subpage-section .shell {
+  max-width: 880px;
+}
+
+.about-page .subpage-section__title {
+  font-size: clamp(28px, 3.4vw, 38px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--dark);
+  margin: 64px 0 16px;
+  max-width: 720px;
+}
+
+.about-page .prose {
+  max-width: 720px;
+}
+
+.about-page .prose p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 22px;
+  max-width: 720px;
+}
+
+.about-page .prose p strong {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* Closing CTA — second hero block at the bottom of the page,
+   visually paired with the opening h1. The 'Get in touch' link
+   becomes a real button instead of an inline text link. Marked with
+   .subpage-hero--closing to distinguish from the opening hero. */
+.about-page .subpage-hero--closing {
+  padding: 96px 0 128px;
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.about-page .subpage-hero--closing .subpage-hero__sub {
+  margin-top: 32px;
+}
+
+.about-page .subpage-hero--closing .subpage-hero__sub a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 28px;
+  background: var(--accent);
+  color: var(--dark);
+  border-radius: 28px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.12s ease, transform 0.08s ease;
+}
+
+.about-page .subpage-hero--closing .subpage-hero__sub a:hover {
+  background: var(--accent-strong);
+  color: var(--dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .about-page .subpage-hero {
+    padding: 64px 0 32px;
+  }
+  .about-page .subpage-section__title {
+    margin-top: 40px;
+  }
+  .about-page .subpage-hero--closing {
+    padding: 64px 0 80px;
+    margin-top: 32px;
+  }
 }
