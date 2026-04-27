@@ -315,9 +315,9 @@
 
 .about-page .subpage-hero__title {
   font-size: clamp(40px, 5.5vw, 64px);
-  font-weight: 300;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
   color: var(--dark);
   max-width: none;
 }
@@ -343,9 +343,9 @@
 
 .about-page .subpage-section__title {
   font-size: clamp(28px, 3.4vw, 38px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
   color: var(--dark);
   margin: 64px 0 16px;
   max-width: 720px;
