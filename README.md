@@ -7,15 +7,16 @@ workspace SPA at `workspace.clearledgr.com` — only shares the brand.
 
 | Path | File | Purpose |
 |---|---|---|
-| `/` | `index.html` | Hero + features + integrations + early access |
-| `/pricing` | `pricing.html` | Three tiers (Starter / Growth / Enterprise) + FAQ |
-| `/security` | `security.html` | Security overview + link to evidence packet |
+| `/` | `index.html` | Hero + features + integrations + demo CTA |
+| `/security` | `security.html` | Security overview + how to request the evidence packet |
 | `/about` | `about.html` | Mission, beliefs, team |
 | `/contact` | `contact.html` | Demo / sales / support contact form |
 
-Privacy policy and Terms live on the workspace SPA at
-`workspace.clearledgr.com/privacy` and `/terms`. The marketing footer
-links there.
+There is intentionally no public pricing page — this matches the AI-native
+finance peer pattern (Stacks.ai, getbasis.ai, etc.). Every commercial
+inquiry routes through `/contact` until pricing is validated against
+real customer conversations. Privacy policy and Terms live on the
+workspace SPA at `workspace.clearledgr.com/privacy` and `/terms`.
 
 ## Stylesheets
 
