@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Clearledgr</title>
+    <meta name="description" content="Talk to Clearledgr — book a demo, ask a sales or security question, or get in touch with the team." />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Kalam:wght@400;700&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./pages.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="section_header26">
+        <div class="shell">
+          <div class="topbar-frame">
+            <a class="brand" href="./index.html" aria-label="Clearledgr home">
+              <span class="brand-mark" aria-hidden="true"><img src="./assets/favicon.png" alt="" /></span>
+              <span class="brand-copy">Clearledgr</span>
+            </a>
+            <nav class="nav" aria-label="Primary">
+              <a href="./index.html#features">Features</a>
+              <a href="./pricing.html">Pricing</a>
+              <a href="./security.html">Security</a>
+              <a href="./about.html">About</a>
+            </nav>
+            <div class="topbar-actions">
+              <a class="button button--primary" href="./contact.html">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="subpage-hero">
+          <div class="shell">
+            <div class="subpage-hero__eyebrow">Talk to us</div>
+            <h1 class="subpage-hero__title">Book a demo or ask a question.</h1>
+            <p class="subpage-hero__sub">
+              Tell us about your AP volume, your ERP, and where the workflow
+              breaks today. We'll show you a live workspace running real
+              invoices and answer the questions that matter for your team.
+            </p>
+          </div>
+        </section>
+
+        <section class="subpage-section">
+          <div class="shell">
+            <div class="contact-grid">
+              <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+                <label>
+                  Work email
+                  <input type="email" name="email" required placeholder="you@company.com" />
+                </label>
+                <label>
+                  Name
+                  <input type="text" name="name" required placeholder="Your name" />
+                </label>
+                <label>
+                  Company
+                  <input type="text" name="company" placeholder="Acme Manufacturing" />
+                </label>
+                <label>
+                  Role
+                  <select name="role">
+                    <option>CFO</option>
+                    <option>Financial Controller</option>
+                    <option>AP Manager</option>
+                    <option>Founder / Operator</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label>
+                  Monthly invoice volume
+                  <select name="volume">
+                    <option>Under 250</option>
+                    <option>250 – 1,500</option>
+                    <option>1,500 – 5,000</option>
+                    <option>5,000+</option>
+                  </select>
+                </label>
+                <label>
+                  What's broken today?
+                  <textarea name="message" placeholder="Approvals stuck in email threads, multi-entity ERP entry, vendor follow-ups… tell us what hurts."></textarea>
+                </label>
+                <button class="button button--primary button--full" type="submit">Send</button>
+              </form>
+
+              <aside class="contact-aside prose">
+                <h3>Sales</h3>
+                <p>Email <a href="mailto:hello@clearledgr.com">hello@clearledgr.com</a> for sales inquiries, RFPs, or to schedule a security review.</p>
+                <h3>Support</h3>
+                <p>Existing customers: email <a href="mailto:support@clearledgr.com">support@clearledgr.com</a> or open a ticket from inside the workspace.</p>
+                <h3>Security</h3>
+                <p>Coordinated disclosure: email <a href="mailto:security@clearledgr.com">security@clearledgr.com</a>. We respond within two business days.</p>
+                <h3>Press</h3>
+                <p>Email <a href="mailto:press@clearledgr.com">press@clearledgr.com</a>.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="shell footer__inner">
+          <div class="footer__brand">
+            <a class="brand brand--footer" href="./index.html" aria-label="Clearledgr home">
+              <span class="brand-mark" aria-hidden="true"><img src="./assets/favicon.png" alt="" /></span>
+              <span class="brand-copy">Clearledgr</span>
+            </a>
+          </div>
+          <div class="footer__meta">
+            <p class="footer__links">
+              <a href="./pricing.html">Pricing</a>
+              <a href="./security.html">Security</a>
+              <a href="./about.html">About</a>
+              <a href="./contact.html">Contact</a>
+              <a href="https://workspace.clearledgr.com/privacy">Privacy</a>
+              <a href="https://workspace.clearledgr.com/terms">Terms</a>
+            </p>
+            <p>Email <a href="mailto:hello@clearledgr.com">hello@clearledgr.com</a></p>
+          </div>
+        </div>
+        <div class="shell footer__bottom">
+          <p>&copy; 2026 Clearledgr Ltd. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

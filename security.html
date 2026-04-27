@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security | Clearledgr</title>
+    <meta name="description" content="Clearledgr security overview — encryption, access control, audit logging, sub-processors, and incident response." />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Kalam:wght@400;700&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./pages.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="section_header26">
+        <div class="shell">
+          <div class="topbar-frame">
+            <a class="brand" href="./index.html" aria-label="Clearledgr home">
+              <span class="brand-mark" aria-hidden="true"><img src="./assets/favicon.png" alt="" /></span>
+              <span class="brand-copy">Clearledgr</span>
+            </a>
+            <nav class="nav" aria-label="Primary">
+              <a href="./index.html#features">Features</a>
+              <a href="./pricing.html">Pricing</a>
+              <a href="./security.html">Security</a>
+              <a href="./about.html">About</a>
+            </nav>
+            <div class="topbar-actions">
+              <a class="button button--primary" href="./contact.html">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="subpage-hero">
+          <div class="shell">
+            <div class="subpage-hero__eyebrow">Security &amp; trust</div>
+            <h1 class="subpage-hero__title">Built for the data finance teams handle.</h1>
+            <p class="subpage-hero__sub">
+              Bank details, vendor records, and ERP credentials sit at the center of
+              what we process. The controls below are how we earn the right to
+              hold them.
+            </p>
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-card__num">TLS 1.2+</div>
+                <div class="stat-card__label">Enforced everywhere, with HSTS preload-ready</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__num">AES-256</div>
+                <div class="stat-card__label">Database encryption + Fernet field-level for bank details</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__num">72h</div>
+                <div class="stat-card__label">Breach notification SLA, GDPR-aligned</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="subpage-section">
+          <div class="shell">
+            <h2 class="subpage-section__title">How we handle your data</h2>
+            <div class="prose">
+              <h3>Authentication</h3>
+              <p>Sign in with Google, Microsoft, or email/password. Passwords are bcrypt-hashed. Session cookies are HttpOnly with SameSite-Lax. CSRF tokens are validated on every mutating request.</p>
+
+              <h3>Role-based access</h3>
+              <p>Seven hierarchical roles — Owner, CFO, Financial Controller, AP Manager, AP Clerk, Approver, Read-only. Tenant isolation is enforced on every query by <code>organization_id</code>; column-whitelist guards prevent injection on dynamic UPDATE paths.</p>
+
+              <h3>Encryption</h3>
+              <p>TLS 1.2+ enforced at ingress with HSTS. AES-256 at rest in the managed Postgres. Sensitive fields — bank details, ERP credentials, OAuth refresh tokens — are encrypted with Fernet on top of the database encryption, derived from a key never touched by the LLM.</p>
+
+              <h3>Audit logging</h3>
+              <p>Every state transition writes an append-only row to <code>audit_events</code>. Database triggers reject any UPDATE or DELETE on the audit table. Idempotency keys prevent duplicate event recording.</p>
+
+              <h3>Rate limiting + CSRF</h3>
+              <p>Production traffic is rate-limited at the middleware layer with Redis-backed buckets; CSRF tokens are required on every cookie-authenticated mutation.</p>
+
+              <h3>Incident response</h3>
+              <p>Severity tiers, on-call rotation, 72-hour breach notification SLA. Customers receive an RCA within one week of any incident touching their data.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="subpage-section">
+          <div class="shell">
+            <h2 class="subpage-section__title">Compliance roadmap</h2>
+            <div class="prose">
+              <p><strong>Today.</strong> Controls equivalent to SOC2 are implemented and documented in our security packet, with file:line citations into the source. We share the packet under NDA on request.</p>
+              <p><strong>Next.</strong> SOC2 Type 1 audit (~6 weeks once auditor is engaged), then a 6-month observation window for Type 2.</p>
+              <p><strong>Ongoing.</strong> Dependabot watches dependencies weekly. Sentry surfaces errors with PII scrubbing applied at the SDK boundary. Sub-processors are documented and customers receive 30 days' notice before any change.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="subpage-section">
+          <div class="shell">
+            <h2 class="subpage-section__title">Get the security packet</h2>
+            <div class="prose">
+              <p>For prospects, customers, or auditors who need the full evidence packet — controls map, sub-processor list, incident response plan, vulnerability disclosure policy, and DPA — email <a href="mailto:security@clearledgr.com">security@clearledgr.com</a>.</p>
+              <p>For coordinated security disclosures, please follow our <a href="mailto:security@clearledgr.com">vulnerability disclosure policy</a>. We respond within two business days.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="shell footer__inner">
+          <div class="footer__brand">
+            <a class="brand brand--footer" href="./index.html" aria-label="Clearledgr home">
+              <span class="brand-mark" aria-hidden="true"><img src="./assets/favicon.png" alt="" /></span>
+              <span class="brand-copy">Clearledgr</span>
+            </a>
+          </div>
+          <div class="footer__meta">
+            <p class="footer__links">
+              <a href="./pricing.html">Pricing</a>
+              <a href="./security.html">Security</a>
+              <a href="./about.html">About</a>
+              <a href="./contact.html">Contact</a>
+              <a href="https://workspace.clearledgr.com/privacy">Privacy</a>
+              <a href="https://workspace.clearledgr.com/terms">Terms</a>
+            </p>
+            <p>Email <a href="mailto:hello@clearledgr.com">hello@clearledgr.com</a></p>
+          </div>
+        </div>
+        <div class="shell footer__bottom">
+          <p>&copy; 2026 Clearledgr Ltd. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

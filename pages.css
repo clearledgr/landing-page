@@ -1,0 +1,293 @@
+/* Companion-page styles — pricing, security, about, contact.
+   Layered on top of styles.css; reuses .shell, .button, .brand, .nav. */
+
+.subpage-hero {
+  padding: 64px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.subpage-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: 12px;
+}
+
+.subpage-hero__title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--dark);
+  max-width: 880px;
+}
+
+.subpage-hero__sub {
+  margin-top: 16px;
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 720px;
+}
+
+.subpage-section {
+  padding: 64px 0;
+}
+
+.subpage-section + .subpage-section {
+  border-top: 1px solid var(--line);
+}
+
+.subpage-section__title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.subpage-section__sub {
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  max-width: 680px;
+}
+
+/* Prose */
+.prose p {
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+  max-width: 720px;
+  font-size: 16px;
+}
+
+.prose h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 32px 0 8px;
+  color: var(--dark);
+}
+
+.prose ul {
+  padding-left: 22px;
+  margin: 0 0 16px;
+  max-width: 720px;
+}
+
+.prose li {
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.prose a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Pricing tiles */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-card--featured {
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
+}
+
+.pricing-card--featured .pricing-card__name,
+.pricing-card--featured .pricing-card__price {
+  color: #fff;
+}
+
+.pricing-card--featured .pricing-card__sub,
+.pricing-card--featured li {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pricing-card__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.pricing-card__price {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+}
+
+.pricing-card__price small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.pricing-card__sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  min-height: 38px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-card li {
+  font-size: 14px;
+  color: var(--ink-soft);
+  padding-left: 22px;
+  position: relative;
+}
+
+.pricing-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.pricing-card .button {
+  margin-top: auto;
+}
+
+.pricing-card--featured .button.button--primary {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 14px;
+  color: var(--ink);
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 3px rgba(0, 214, 126, 0.12);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-aside h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.contact-aside p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+/* Footer link rows */
+.footer__links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.footer__links a:hover {
+  color: var(--ink);
+}
+
+/* Stat row for security/about pages */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+
+.stat-card__num {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+
+.stat-card__label {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}

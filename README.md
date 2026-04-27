@@ -1,24 +1,31 @@
-# Clearledgr Landing Page
+# Clearledgr Marketing Site
 
-Standalone marketing page for Clearledgr's Gmail-first AP workflow.
+The static site that lives at `clearledgr.com`. Separate from the
+workspace SPA at `workspace.clearledgr.com` — only shares the brand.
 
-## Files
+## Pages
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/`
+| Path | File | Purpose |
+|---|---|---|
+| `/` | `index.html` | Hero + features + integrations + early access |
+| `/pricing` | `pricing.html` | Three tiers (Starter / Growth / Enterprise) + FAQ |
+| `/security` | `security.html` | Security overview + link to evidence packet |
+| `/about` | `about.html` | Mission, beliefs, team |
+| `/contact` | `contact.html` | Demo / sales / support contact form |
 
-## Assets
+Privacy policy and Terms live on the workspace SPA at
+`workspace.clearledgr.com/privacy` and `/terms`. The marketing footer
+links there.
 
-- `assets/demo-poster.png`
-- `assets/demo-reel.gif`
-- `assets/gmail-inbox-surface.png`
-- `assets/gmail-thread-panel.png`
-- `assets/ops-control-plane.png`
-- `assets/favicon.png`
+## Stylesheets
 
-## Local Preview
+- `styles.css` — design system + the homepage layout
+- `pages.css` — companion-page primitives (subpage hero, pricing
+  tiles, contact form, prose, stat row, footer links)
+
+Both are loaded on every page so layout primitives stay in one place.
+
+## Local preview
 
 From the project root:
 
@@ -26,16 +33,32 @@ From the project root:
 python3 -m http.server 4173 --directory landing-page
 ```
 
-Then open:
+Then open `http://127.0.0.1:4173`. To preview a specific page, append
+the filename — `/pricing.html`, `/security.html`, etc.
 
-```text
-http://127.0.0.1:4173
-```
+## Deploy
 
-## Current Direction
+The site is fully static. Three deploy paths from cleanest to fastest:
 
-- Streak-inspired page structure, adapted for Clearledgr's AP-from-Gmail positioning
-- buyer-facing copy only; no fundraising or internal product language
-- hero built around a short animated demo assembled from real product screens
-- embedded `Book a demo` form with Netlify Forms markup for production
-- local preview preserves a JS-only success state instead of requiring a live form backend
+1. **Cloudflare Pages** — point at this directory, no build step.
+   Fastest CDN, free, includes free TLS for `clearledgr.com`.
+2. **Netlify** — same as above. Form submissions on `contact.html`
+   already use the `data-netlify="true"` attribute, so Netlify Forms
+   captures leads automatically.
+3. **Railway / Vercel** — also work; static sites only need an HTTP
+   server.
+
+### DNS at the apex
+
+For `clearledgr.com` (apex), point to the Cloudflare/Netlify provided
+IP (or use ALIAS/ANAME). For `www.clearledgr.com`, CNAME to the
+provider's hostname. Redirect `www` → apex.
+
+## Direction
+
+- Streak-inspired structure adapted for finance teams
+- Buyer-facing copy only; no internal product language or fundraising
+- Hero is a short animated demo assembled from real product screens
+- Mint `#00D67E` + navy `#0A1628` per the design system
+- Forms use Netlify Forms markup; local preview keeps a JS-only
+  success state so the form is testable without a backend
