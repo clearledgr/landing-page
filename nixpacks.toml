@@ -1,0 +1,15 @@
+# Nixpacks build plan for the marketing site Railway service.
+#
+# 1. Use Node 22 (LTS).
+# 2. `npm ci` to install Express.
+# 3. No build step — the site is static html/css/js.
+# 4. `npm start` boots server.js.
+
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+
+[phases.install]
+cmds = ["npm ci --omit=dev"]
+
+[start]
+cmd = "npm start"

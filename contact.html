@@ -49,9 +49,8 @@
         <section class="subpage-section">
           <div class="shell">
             <div class="contact-grid">
-              <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+              <form class="contact-form" id="cl-contact-form" novalidate>
+                <p hidden><label>Don't fill this out: <input name="bot_field" /></label></p>
 
                 <label>
                   Work email
@@ -59,7 +58,7 @@
                 </label>
                 <label>
                   Name
-                  <input type="text" name="name" required placeholder="Your name" />
+                  <input type="text" name="name" placeholder="Your name" />
                 </label>
                 <label>
                   Company
@@ -88,8 +87,75 @@
                   What's broken today?
                   <textarea name="message" placeholder="Approvals stuck in email threads, multi-entity ERP entry, vendor follow-ups… tell us what hurts."></textarea>
                 </label>
-                <button class="button button--primary button--full" type="submit">Send</button>
+                <div id="cl-contact-status" class="cl-contact-status" aria-live="polite"></div>
+                <button class="button button--primary button--full" type="submit" id="cl-contact-submit">Send</button>
               </form>
+
+              <script>
+                (function () {
+                  var API_BASE = 'https://api.clearledgr.com';
+                  var form = document.getElementById('cl-contact-form');
+                  var statusEl = document.getElementById('cl-contact-status');
+                  var btn = document.getElementById('cl-contact-submit');
+                  if (!form) return;
+
+                  function setStatus(message, kind) {
+                    if (!statusEl) return;
+                    statusEl.textContent = message || '';
+                    statusEl.className = 'cl-contact-status' + (kind ? ' cl-contact-status--' + kind : '');
+                  }
+
+                  form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    var fd = new FormData(form);
+                    if (String(fd.get('bot_field') || '').trim()) {
+                      // Honeypot tripped — silently no-op.
+                      setStatus('Thanks. We’ll be in touch.', 'ok');
+                      form.reset();
+                      return;
+                    }
+                    var email = String(fd.get('email') || '').trim();
+                    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                      setStatus('Please enter a valid work email.', 'error');
+                      return;
+                    }
+
+                    var payload = {
+                      email: email,
+                      name: String(fd.get('name') || '').trim(),
+                      company: String(fd.get('company') || '').trim(),
+                      role: String(fd.get('role') || '').trim(),
+                      volume: String(fd.get('volume') || '').trim(),
+                      message: String(fd.get('message') || '').trim(),
+                      source: 'clearledgr.com'
+                    };
+
+                    btn.disabled = true;
+                    var prevText = btn.textContent;
+                    btn.textContent = 'Sending…';
+                    setStatus('', '');
+
+                    fetch(API_BASE + '/leads', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(payload),
+                      credentials: 'omit'
+                    }).then(function (res) {
+                      if (!res.ok) throw new Error('http_' + res.status);
+                      return res.json();
+                    }).then(function () {
+                      setStatus('Thanks. We’ll be in touch within one business day.', 'ok');
+                      form.reset();
+                    }).catch(function () {
+                      setStatus('Couldn’t send right now. Email hello@clearledgr.com and we’ll follow up.', 'error');
+                    }).then(function () {
+                      btn.disabled = false;
+                      btn.textContent = prevText;
+                    });
+                  });
+                })();
+              </script>
 
               <aside class="contact-aside prose">
                 <h3>Sales</h3>

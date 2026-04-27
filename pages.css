@@ -415,3 +415,18 @@
     margin-top: 32px;
   }
 }
+
+/* Contact form submission status feedback (post-Netlify migration) */
+.cl-contact-status {
+  font-size: 13px;
+  min-height: 1em;
+  margin: 0;
+  padding: 0;
+  color: var(--ink-soft);
+}
+.cl-contact-status--ok {
+  color: var(--accent-strong);
+}
+.cl-contact-status--error {
+  color: #dc2626;
+}

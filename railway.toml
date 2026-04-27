@@ -1,0 +1,14 @@
+# Railway deployment configuration for the marketing site at
+# clearledgr.com. Tiny Express process (server.js) serving the static
+# html/css/js. Replaces the prior Netlify hosting after Netlify's
+# credit-based pricing model surprise-suspended the site on 2026-04-27.
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+healthcheckPath = "/healthz"
+healthcheckTimeout = 30

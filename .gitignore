@@ -3,3 +3,7 @@
 
 # macOS
 .DS_Store
+
+# Node.js dependencies (Railway installs at build time)
+node_modules/
+

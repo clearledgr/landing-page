@@ -1,0 +1,16 @@
+{
+  "name": "clearledgr-marketing",
+  "version": "1.0.0",
+  "description": "Static marketing site for clearledgr.com — served from Railway via a tiny Express process.",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
