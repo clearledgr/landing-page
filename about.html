@@ -36,10 +36,7 @@
       <main>
         <section class="subpage-hero">
           <div class="shell">
-            <h1 class="subpage-hero__title">The coordination layer for finance operations</h1>
-            <p class="subpage-hero__sub">
-              A finance team is the operating consciousness of a company.
-            </p>
+            <h1 class="subpage-hero__title">A finance team is the operating consciousness of a company.</h1>
           </div>
         </section>
 
@@ -52,27 +49,11 @@
               <p>Not the ERP. The ERP holds the result, not the process. When the journal entry hits NetSuite, the work is already done. What NetSuite holds is the artifact. Not the inbox. The inbox holds fragments: a forwarded invoice here, a chase email there, an approver's "yes" reply buried under three meeting confirmations. Not Slack. Slack holds conversation, not state. Not the spreadsheet, which holds a snapshot in a moment that is already passed.</p>
               <p>The work lives nowhere. It lives in the head of the AP clerk who knows that Vendor 4471 always sends two invoices for the same purchase order. It lives in the email thread the controller can find if she searches the right keywords. It lives in the inherited tribal knowledge of how this particular finance team handles this particular kind of edge case.</p>
               <p>That is not a small problem. It is the structural condition of the function.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="subpage-section">
-          <div class="shell">
-            <h2 class="subpage-section__title">Every system finance buys makes the fragmentation worse.</h2>
-            <div class="prose">
               <p>The last thirty years of finance software was built to record outcomes, not to coordinate the work that produces them. ERPs got better at storing data. Spend management tools got better at procurement. Close tools got better at reconciliation. AP automation got better at OCR. Each of these tools solved a sliver of the problem and left the coordination between them to humans.</p>
               <p>So the modern finance team's stack looks like this: an ERP, a spend tool, an AP tool, a close tool, an FP&amp;A tool, a payroll tool, a billing tool, three banks, four spreadsheets, an inbox, and a Slack channel. Each tool holds a piece of the truth. None of them holds the work itself.</p>
               <p>The result: finance teams spend most of their time doing what we call coordination work. Holding state across tools. Translating between systems. Chasing humans. Reconstructing what happened from fragments. By internal measures, that is three days of every working week, per finance person, on coordination.</p>
               <p>That is the labor we are trying to give back.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="subpage-section">
-          <div class="shell">
-            <h2 class="subpage-section__title">Meanwhile, the profession is shrinking.</h2>
-            <div class="prose">
-              <p>Experienced accountants are retiring. Fewer young professionals are stepping in to replace them. In the United States, more than 300,000 accountants and auditors have left the field in the last three years. Three quarters of currently practising CPAs are at or near retirement age. Accounting was the major of choice for four percent of college students a decade ago. Today it is the choice of one and a half percent. The Bureau of Labor Statistics projects 136,000 unfilled openings every year through 2034. In the UK, the shortage is projected at 60,000 accountants by 2050.</p>
+              <p>Meanwhile, the profession is shrinking. Experienced accountants are retiring. Fewer young professionals are stepping in to replace them. In the United States, more than 300,000 accountants and auditors have left the field in the last three years. Three quarters of currently practising CPAs are at or near retirement age. Accounting was the major of choice for four percent of college students a decade ago. Today it is the choice of one and a half percent. The Bureau of Labor Statistics projects 136,000 unfilled openings every year through 2034. In the UK, the shortage is projected at 60,000 accountants by 2050.</p>
               <p>The work, however, is not shrinking. It is growing. Regulation is more complex than it has ever been. Reporting cycles are tighter. The economy is more layered, more cross-border, more entangled with systems and software. AI will introduce entirely new kinds of economic activity that will need to be measured, attributed, and reported.</p>
               <p>So the gap between what needs to be accounted for and the human capacity to do it is widening every year. The traditional answer to that gap, hire more people, is no longer available. The answer has to come from somewhere else.</p>
             </div>
@@ -86,28 +67,21 @@
               <p>For the first time, an LLM can read an email, understand its content, and pass it forward with judgment. An agent can sit in the messy middle, between the tool that holds the data and the human who makes the decision, and advance the work. Not by replacing the human. By holding state, surfacing exceptions, and making the next step obvious.</p>
               <p>This is not chat. Chat is the wrong primitive for this work. Chat is request and response. Coordination work is long-running and stateful. An invoice does not become a payment in one prompt. It becomes a payment over nine days, across four systems, three approvers, and one exception. What is needed is an agent that can hold the state of that nine-day journey and advance it. Autonomously where the rules permit. Surfaced to a human where they do not.</p>
               <p>What is needed, in other words, is a coordination layer.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="subpage-section">
-          <div class="shell">
-            <h2 class="subpage-section__title">Clearledgr.</h2>
-            <div class="prose">
               <p>Clearledgr makes workflow state into a first-class object. Every finance workflow, an AP cycle, a customer collection, a reconciliation, a close item, gets a persistent record. The record holds its state, its timeline, its exceptions, its outcome. An agent advances each workflow from where it is to where it needs to be. A human handles the exceptions. The state is visible, attributable, and audit-ready, in the tools the finance team already lives in: Gmail, Slack, the ERP they already run.</p>
               <p>We start at AP. AP is the highest-volume coordination problem inside the finance function and the easiest one to make objectively better. From AP, the same substrate compounds outward: AR, reconciliation, close, FP&amp;A. Every workflow has the same shape. Every workflow earns the right to the next.</p>
               <p>The destination is a finance function whose coordination layer is operated by software, with humans on top: deciding, judging, advising. Not chasing.</p>
+              <p>The technology to do this did not exist eighteen months ago. The category leaders, BlackLine and HighRadius, took twenty years to build their position because the substrate they had to work with was OCR and rules engines. The substrate now is reasoning. Agents. The compression of the operational ledger that was not possible in 2015 is possible today. The shortage of accounting talent that was a slow trend in 2015 is now a structural crisis. The two curves, capability rising and capacity falling, have crossed. This is the window.</p>
+              <p>The work begins.</p>
             </div>
           </div>
         </section>
 
-        <section class="subpage-section">
+        <section class="subpage-hero">
           <div class="shell">
-            <h2 class="subpage-section__title">Why now.</h2>
-            <div class="prose">
-              <p>The technology to do this did not exist eighteen months ago. The category leaders, BlackLine and HighRadius, took twenty years to build their position because the substrate they had to work with was OCR and rules engines. The substrate now is reasoning. Agents. The compression of the operational ledger that was not possible in 2015 is possible today. The shortage of accounting talent that was a slow trend in 2015 is now a structural crisis. The two curves, capability rising and capacity falling, have crossed. This is the window.</p>
-              <p>The work begins.</p>
-            </div>
+            <h1 class="subpage-hero__title">Put Clearledgr to work.</h1>
+            <p class="subpage-hero__sub">
+              <a href="./contact.html">Get in touch →</a>
+            </p>
           </div>
         </section>
       </main>
