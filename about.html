@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Clearledgr</title>
-    <meta name="description" content="Clearledgr is the coordination layer for finance teams. We build where finance already works — Gmail, Slack, Teams, and the ERP." />
+    <meta name="description" content="Clearledgr is the coordination layer for finance teams. We connect Gmail, Slack, Teams, and the ERP into one workflow." />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,12 +37,12 @@
         <section class="subpage-hero">
           <div class="shell">
             <div class="subpage-hero__eyebrow">About Clearledgr</div>
-            <h1 class="subpage-hero__title">Finance lives in the inbox. We made the inbox work for finance.</h1>
+            <h1 class="subpage-hero__title">The coordination layer for finance teams.</h1>
             <p class="subpage-hero__sub">
-              Clearledgr is the coordination layer for finance teams. Invoices arrive
-              in Gmail, approvals happen in Slack and Teams, and the books live in
-              the ERP. We connect what's already there instead of asking your team
-              to log into a new portal every morning.
+              Finance lives across an inbox, a chat tool, and a system of record.
+              Clearledgr connects them — so the work that finance teams already
+              do across Gmail, Slack, Teams, and the ERP behaves like one
+              product instead of three half-products stitched together by hand.
             </p>
           </div>
         </section>
@@ -51,8 +51,23 @@
           <div class="shell">
             <h2 class="subpage-section__title">Why we built this</h2>
             <div class="prose">
-              <p>The AP playbook hasn't changed in 20 years. An invoice arrives. Someone reads it. Someone matches it against a PO. Someone routes it for approval. Someone enters it into NetSuite or SAP. Someone follows up when it goes silent. The work is sequential, repetitive, and runs on inboxes — but every "modern AP" tool asks finance teams to abandon the inbox and rebuild their workflow inside a portal nobody opens twice a week.</p>
-              <p>We build where finance already works. The Box — the persistent, threaded home of an invoice from receipt to payment — lives in Gmail. Approvals happen on Slack or Teams cards because that's where finance asks for sign-off today. The ERP stays the system of record. Clearledgr is the coordination layer that makes them act like one product.</p>
+              <p>Finance teams don't have a workflow problem. They have a coordination problem. An invoice arrives in an inbox. The decision happens in Slack. The entry lands in NetSuite. A bank-reconciliation exception shows up next week and runs the same loop in reverse. A period close pulls every one of those threads together at month-end. The work is real, the people are competent, the tools are fine — but the seams between the tools are where everything gets lost.</p>
+              <p>Every "modern finance" tool we looked at asked the team to abandon those tools and rebuild the workflow inside a portal nobody opens twice a week. We took the opposite bet. We build where finance already works. Each unit of work — an invoice, a recon exception, a close task — has a persistent home we call a Box. The Box lives across Gmail, Slack, Teams, and the ERP, holding the same state and the same audit trail no matter which surface you touch it from.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="subpage-section">
+          <div class="shell">
+            <h2 class="subpage-section__title">Workflows on the platform today</h2>
+            <div class="prose">
+              <p>The platform is workflow-pluggable. Two Box types ship today:</p>
+              <ul>
+                <li><strong>Accounts payable.</strong> Invoice intake from Gmail, deterministic matching against POs and prior history, approval routing to Slack or Teams, autonomous posting to NetSuite, SAP, QuickBooks, or Xero with an override window for human reversal.</li>
+                <li><strong>Vendor onboarding.</strong> Vendor-side intake with state-tracked completion, document collection, and the same append-only audit trail as AP.</li>
+              </ul>
+              <p>Period-close tooling (accrual reporting, backdated-invoice detection, period lock/unlock) and bank-reconciliation matching ship as services on top of AP today. Both are next in line to graduate into full Box types — coordinated workflows with their own state machines, exception routing, and decision surfaces — once the customer demand pulls them there.</p>
+              <p>New workflows ship as new Box types on the same primitives: state machine, append-only audit, deterministic rules with LLM-rendered explanations, and an outcome surface that lives in the customer's existing tools.</p>
             </div>
           </div>
         </section>
@@ -62,13 +77,13 @@
             <h2 class="subpage-section__title">What we believe</h2>
             <div class="prose">
               <h3>Tools are render targets, not data homes.</h3>
-              <p>Gmail is a work surface. Slack is a decision surface. The ERP is the system of record. None of them should pretend to be the system of truth for the work happening across all three.</p>
+              <p>Gmail is a work surface. Slack and Teams are decision surfaces. The ERP is the system of record. None of them should pretend to be the system of truth for the work happening across all three. Clearledgr is the coordination layer that lets each tool do what it's good at without forcing the customer to pick one as their hub.</p>
               <h3>Rules first, LLMs second.</h3>
-              <p>Matching, validation, and state transitions are deterministic. The LLM writes summaries, drafts replies, and surfaces context — it never decides whether to pay an invoice. Reasoning is auditable; behavior is predictable.</p>
+              <p>Matching, validation, and state transitions are deterministic. The LLM writes summaries, drafts replies, and surfaces context — it never decides whether to pay an invoice, sign off a reconciliation, or close a period. Reasoning is auditable; behavior is predictable.</p>
               <h3>Audit trails are not retroactive.</h3>
               <p>Every state transition writes an append-only row before the action completes. The trail is the truth, and it cannot be edited after the fact. That is how finance gets to trust autonomous behavior.</p>
               <h3>Sell to the people who feel the cost.</h3>
-              <p>We build for mid-market and enterprise finance teams who already feel the cost of broken AP. We talk to them directly.</p>
+              <p>We build for mid-market and enterprise finance teams who already feel the cost of broken coordination across their tools. We talk to them directly.</p>
             </div>
           </div>
         </section>
